@@ -119,7 +119,7 @@ def _migrate_dj011_blob(schema, default_store):
         for _hash, size in zip(*legacy_external.fetch("hash", "size")):
             if _hash in hashes:
                 relative_path = str(Path(schema.database, _hash).as_posix())
-                uuid = dj.hash.uuid_from_buffer(init_string=relative_path)
+                uuid = dj.hash.uuid_from_buffer(buffer=relative_path.encode("utf-8"))
                 external_path = ext._make_external_filepath(relative_path)
                 if ext.spec["protocol"] == "s3":
                     contents_hash = dj.hash.uuid_from_buffer(

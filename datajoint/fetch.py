@@ -75,9 +75,7 @@ def _get(connection, attr, data, squeeze, download_path):
             attachment_checksum = (
                 _uuid if attr.is_external else hash.uuid_from_buffer(data)
             )
-            if attachment_checksum == hash.uuid_from_file(
-                local_filepath, init_string=attachment_name + "\0"
-            ):
+            if attachment_checksum == hash.uuid_from_file(local_filepath):
                 return adapt(
                     str(local_filepath)
                 )  # checksum passed, no need to download again
@@ -89,9 +87,7 @@ def _get(connection, attr, data, squeeze, download_path):
                 if not f.is_file():
                     local_filepath = f
                     break
-                if attachment_checksum == hash.uuid_from_file(
-                    f, init_string=attachment_name + "\0"
-                ):
+                if attachment_checksum == hash.uuid_from_file(f):
                     return adapt(str(f))  # checksum passed, no need to download again
         # Save attachment
         if attr.is_external:

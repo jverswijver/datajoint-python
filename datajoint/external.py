@@ -221,7 +221,7 @@ class ExternalTable(Table):
 
     def upload_attachment(self, local_path):
         attachment_name = Path(local_path).name
-        uuid = uuid_from_file(local_path, init_string=attachment_name + "\0")
+        uuid = uuid_from_file(local_path)
         external_path = self._make_uuid_path(uuid, "." + attachment_name)
         self._upload_file(local_path, external_path)
         # insert tracking info
@@ -266,7 +266,7 @@ class ExternalTable(Table):
                 )
             )
         uuid = uuid_from_buffer(
-            init_string=relative_filepath
+            buffer=relative_filepath.encode("utf8")
         )  # hash relative path, not contents
         contents_hash = uuid_from_file(local_filepath)
 

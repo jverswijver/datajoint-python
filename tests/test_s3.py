@@ -83,7 +83,7 @@ class TestS3:
         error_list = schema.external["share"].delete(
             delete_external_files=True, errors_as_string=False
         )
-
+        print(error_list)
         # Teardown
         schema.external["share"].s3.client = old_client
         schema.external["share"].delete(delete_external_files=True)
