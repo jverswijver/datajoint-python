@@ -2,8 +2,8 @@
 [![Build Status](https://travis-ci.org/datajoint/datajoint-python.svg?branch=master)](https://travis-ci.org/datajoint/datajoint-python)
 [![Coverage Status](https://coveralls.io/repos/datajoint/datajoint-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/datajoint/datajoint-python?branch=master)
 [![PyPI version](https://badge.fury.io/py/datajoint.svg)](http://badge.fury.io/py/datajoint)
-[![Requirements Status](https://requires.io/github/datajoint/datajoint-python/requirements.svg?branch=master)](https://requires.io/github/datajoint/datajoint-python/requirements/?branch=master)
 [![Slack](https://img.shields.io/badge/slack-chat-green.svg)](https://datajoint.slack.com/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # Welcome to DataJoint for Python!
 DataJoint for Python is a framework for scientific workflow management based on relational principles. DataJoint is built on the foundation of the relational data model and prescribes a consistent method for organizing, populating, computing, and querying data.
